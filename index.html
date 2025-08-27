@@ -4,20 +4,23 @@
   <meta name="google-site-verification" content="6XQsgH0zC1udB52ow86UBXqMaF4G1BHmq6Pxs-BIh5U" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Axoryn's Writeups</title>
+  <title>Axoryn's Site</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h1>ax0ryn's Writeups</h1>
+    <h1>ax0ryn's corner</h1>
     <nav>
       <ul>
-        <li><a href="https://ax0ryn.github.io/index.html">Home</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#writeups">Writeups</a></li>
+        <li><a href="#reports">Reports</a></li>
       </ul>
     </nav>
   </header>
   
   <main>
+    <!-- Intro Terminal -->
     <div class="terminal-container">
       <div class="terminal-header">
         <div class="terminal-buttons">
@@ -25,7 +28,7 @@
           <div class="terminal-button button-min"></div>
           <div class="terminal-button button-max"></div>
         </div>
-        <div class="terminal-title">axoryn@writeups:~</div>
+        <div class="terminal-title">axoryn@home:~</div>
       </div>
       <div class="terminal-body">
         <div class="terminal-line">
@@ -44,7 +47,7 @@
           <span>hi, i'm ax0ryn. a hobbyist flag collector and offensive security enthusiast.</span><br>
         </div>
         <div class="terminal-line">
-          <span>i create writeups here to help people learn</span>
+          <span>this is my space for blogs, writeups, and reports.</span>
         </div>
         
         <div class="terminal-line">
@@ -53,43 +56,60 @@
         </div>
       </div>
     </div>
-    
-    <h2>Latest Writeups</h2>
-    
-    <div class="writeups-grid">
-      <div class="writeup-card">
-        <h3>Mr. Robot - THM</h3>
-        <div class="writeup-meta">
-          <span class="difficulty medium">Medium</span>
-          <span>Boot2Root</span>
-          <span>2025</span>
-        </div>
-        <p>a walkthrough of the popular Mr. Robot themed boot2root machine. learn how to exploit wordpress, crack hashes, and escalate privileges.</p>
-        <a href="writeups/mrrobot.html" class="btn">Read Writeup</a>
-      </div>
-      
-      <div class="writeup-card">
-        <h3>CyberHeroes - THM</h3>
-        <div class="writeup-meta">
-          <span class="difficulty easy">Easy</span>
-          <span>Web Security</span>
-          <span>2025</span>
-        </div>
-        <p>bypass client-side authentication and uncover hardcoded credentials to capture the flag in this web challenge.</p>
-        <a href="writeups/cyberheroes.html" class="btn">Read Writeup</a>
-      </div>
 
-      <div class="writeup-card">
-        <h3>Paper - HTB</h3>
-        <div class="writeup-meta">
-          <span class="difficulty easy">Easy</span>
-          <span>Boot2Root</span>
-          <span>2025</span>
+    <!-- Blogs Section -->
+    <section id="blogs" class="content-section">
+      <h2>Blogs</h2>
+      <p>Insights, thoughts, and notes on cybersecurity, CTFs, and hacking culture.</p>
+    </section>
+
+    <!-- Writeups Section -->
+    <section id="writeups" class="content-section">
+      <h2>Writeups</h2>
+      <p>Detailed walkthroughs of CTF challenges, HTB boxes, and real-world exploitation techniques.</p>
+
+      <!-- Example Grid -->
+      <div class="writeups-grid">
+        <div class="writeup-card">
+          <h3>Mr. Robot - THM</h3>
+          <div class="writeup-meta">
+            <span class="difficulty medium">Medium</span>
+            <span>Boot2Root</span>
+            <span>2025</span>
+          </div>
+          <p>a walkthrough of the popular Mr. Robot themed boot2root machine. learn how to exploit wordpress, crack hashes, and escalate privileges.</p>
+          <a href="writeups/mrrobot.html" class="btn">Read Writeup</a>
         </div>
-        <p>a chill htb box where we exploit wordpress, mess with LFI, and root using a polkit vuln. fun one!</p>
-        <a href="writeups/paper.html" class="btn">Read Writeup</a>
+        
+        <div class="writeup-card">
+          <h3>CyberHeroes - THM</h3>
+          <div class="writeup-meta">
+            <span class="difficulty easy">Easy</span>
+            <span>Web Security</span>
+            <span>2025</span>
+          </div>
+          <p>bypass client-side authentication and uncover hardcoded credentials to capture the flag in this web challenge.</p>
+          <a href="writeups/cyberheroes.html" class="btn">Read Writeup</a>
+        </div>
+
+        <div class="writeup-card">
+          <h3>Paper - HTB</h3>
+          <div class="writeup-meta">
+            <span class="difficulty easy">Easy</span>
+            <span>Boot2Root</span>
+            <span>2025</span>
+          </div>
+          <p>a chill htb box where we exploit wordpress, mess with LFI, and root using a polkit vuln. fun one!</p>
+          <a href="writeups/paper.html" class="btn">Read Writeup</a>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section id="reports" class="content-section">
+      <h2>Reports</h2>
+      <p>Professional-style penetration testing reports, red team findings, and vulnerability assessments.</p>
+    </section>
   </main>
   
   <footer>
