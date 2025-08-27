@@ -148,7 +148,6 @@ nav a:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   border-color: var(--accent-blue);
 }
-
 .writeup-card::before {
   content: '';
   position: absolute;
@@ -156,8 +155,9 @@ nav a:hover {
   left: 0;
   width: 5px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--accent-blue), var(--accent-red));
+  background-color: var(--accent-blue); /* solid blue now */
 }
+
 
 .writeup-card h3 {
   color: var(--accent-blue);
