@@ -280,4 +280,23 @@ p code::before {
   color: var(--accent-blue);
 }
 
+.content-section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  border-bottom: 1px solid #222;
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  color: #3a9ff5; /* blue accent */
+  margin-bottom: 15px;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
 /* Removed animations */
