@@ -1,17 +1,24 @@
 :root {
-  --bg-dark: #1c1a1a;       /* Classic black/dark base */
-  --card-bg: #242222;       /* Slightly lighter for contrast */
+  --bg-dark: #1c1a1a;       /* Classic dark base */
+  --card-bg: #242222;       /* Slight contrast for cards */
   --accent-blue: #3b82f6;   /* Realistic blue */
   --accent-red: #ef4444;    /* Realistic red */
-  --text: #e5e5e5;          /* White/near-white */
+  --text: #e5e5e5;          /* White-ish text */
   --text-secondary: #9ca3af;/* Subtle grey */
-  --success: #22c55e;       /* Fresh green */
-  --warning: #eab308;       /* Warm yellow */
-  --danger: #ef4444;        /* Red */
-  --terminal-bg: #141212;   /* Darker for terminal */
+  --success: #22c55e;       /* Green for "easy" etc */
+  --danger: #ef4444;        /* Red for "danger" */
+  --warning: #eab308;       /* Yellow */
+  --terminal-bg: #141212;   /* Dark terminal background */
   --terminal-header: #2b2a2a;
-  --prompt: #f43f5e;        /* Reddish prompt */
+  --prompt: #f43f5e;        /* Reddish terminal prompt */
   --code-bg: #1e1c1c;
+}
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -24,19 +31,36 @@ body {
   margin: 0 auto;
 }
 
-/* Header */
+header {
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: 1px solid #2f2c2c;
+  margin-bottom: 30px;
+}
+
 h1 {
   color: var(--accent-blue);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-header {
-  border-bottom: 1px solid #2f2c2c;
+nav {
+  margin: 20px 0;
 }
 
-/* Nav */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
 nav a {
   color: var(--accent-blue);
-  transition: 0.3s;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s;
 }
 
 nav a:hover {
@@ -44,40 +68,142 @@ nav a:hover {
   color: var(--accent-red);
 }
 
-/* Terminal */
+/* Terminal Styles */
 .terminal-container {
   background-color: var(--terminal-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   border: 1px solid #2f2c2c;
+}
+
+.terminal-header {
+  background-color: var(--terminal-header);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+  margin-right: 10px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.button-close { background-color: var(--danger); }
+.button-min { background-color: var(--warning); }
+.button-max { background-color: var(--success); }
+
+.terminal-title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.terminal-body {
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+  min-height: 200px;
+}
+
+.terminal-line {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .prompt {
   color: var(--prompt);
+  margin-right: 10px;
+  user-select: none;
 }
 
-/* Cards */
+/* Writeup Cards */
+.writeups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 35px;
+  margin-top: 30px;
+}
+
 .writeup-card {
   background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
   border: 1px solid #2f2c2c;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
 }
 
 .writeup-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   border-color: var(--accent-blue);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 }
 
 .writeup-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
   background: linear-gradient(to bottom, var(--accent-blue), var(--accent-red));
 }
 
-/* Headings inside cards */
 .writeup-card h3 {
   color: var(--accent-blue);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.writeup-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.difficulty {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.difficulty.medium {
+  background-color: rgba(234, 179, 8, 0.15);
+  color: var(--warning);
+}
+
+.difficulty.easy {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: var(--success);
+}
+
+.writeup-card p {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
 }
 
 /* Buttons */
 .btn {
+  display: inline-block;
+  padding: 8px 20px;
   background-color: var(--accent-red);
   color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
@@ -86,6 +212,80 @@ nav a:hover {
 
 /* Footer */
 footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 50px;
   border-top: 1px solid #2f2c2c;
   color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Code Blocks */
+pre, code {
+  font-family: 'Courier New', monospace;
+  margin: 15px 0;
+}
+
+pre.command, pre {
+  background-color: var(--terminal-bg);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 15px 15px 15px 40px;
+  overflow-x: auto;
+  position: relative;
+  line-height: 1.5;
+  tab-size: 4;
+}
+
+pre.command {
+  border-left: 3px solid var(--success);
+}
+
+pre.command::before {
+  content: '$';
+  color: var(--prompt);
+  left: 20px;
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+}
+
+pre {
+  border-left: 3px solid var(--accent-blue);
+}
+
+pre::before {
+  content: '⌘';
+  color: var(--accent-blue);
+  left: 15px;
+  font-size: 14px;
+  font-family: sans-serif;
+  position: absolute;
+}
+
+code {
+  background-color: var(--code-bg);
+  color: var(--text);
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  border: 1px solid #2a2f36;
+}
+
+p code::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-blue);
+}
+
+/* Animations */
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
